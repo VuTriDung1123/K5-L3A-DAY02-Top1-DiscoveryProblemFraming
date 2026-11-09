@@ -125,9 +125,9 @@ MỖI LẦN ĐỒNG BỘ — khoảng 40 phút
 
 ### Card muốn pitch nhất
 
-- Card số: 1
-- Vì sao: có số đo rõ nhất (khoảng 2 giờ/ngày), xảy ra mỗi ngày, và người quen làm startup cũng gặp
-- Câu hỏi muốn nhóm phản biện: Nếu chỉ đặt standup cố định 15 phút và bảng việc cập nhật cuối ngày, có giảm được một nửa thời gian không?
+- Card số: 1 và 2 (pitch chung)
+- Vì sao: cả hai đều nghẽn ở quy trình việc trong nhóm: không nắm được tiến độ (card 1) và không có sẵn việc tiếp theo (card 2). Giải quyết được hai bước này thì nhóm không còn tình trạng thiếu chủ động. Card 1 có số đo rõ nhất (khoảng 2 giờ/ngày), người quen làm startup cũng gặp
+- Câu hỏi muốn nhóm phản biện: Nếu chỉ đặt standup cố định 15 phút và một backlog sắp sẵn theo ưu tiên, có giảm được một nửa thời gian họp và thời gian chờ việc không?
 
 ### AI đã phản biện card thế nào
 
@@ -161,8 +161,8 @@ MỖI LẦN ĐỒNG BỘ — khoảng 40 phút
 
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
-| CP1 Scan | | | | |
-| CP2 Problem Card | | | | |
+| CP1 Scan | Viết lại ý thô của tôi thành Job Story, tách các ý gộp thành dòng riêng, chỉ ra dòng nào còn thiếu số đo | Tách một ý "cần automation theo dõi tiến độ, gợi ý chia việc" thành nhiều pain riêng; chỉ ra đó là giải pháp chứ chưa phải problem | Hiểu sai "người kia" là người không code; lúc đầu cho rằng "thiếu chủ động" không phải điểm nghẽn | Tôi giải thích người kia cũng là tech lead, AI viết lại dòng 2. Tôi giữ quan điểm thiếu chủ động là pain vì không biết làm gì tiếp; bỏ 2 ý chưa có bằng chứng ra khỏi bảng |
+| CP2 Problem Card | Đề xuất top 3, dựng quy trình nháp, đóng vai PM hoài nghi phản biện card | Gộp hai dòng trùng (hỏi tiến độ và tốn 2 giờ/ngày) thành card 1; gợi ý phương án không dùng AI (standup cố định, backlog sắp sẵn) | Số phút từng bước do AI đề xuất, không phải đo thật; vẫn coi "thiếu chủ động" là tính cách | Tôi kiểm và giữ số phút như ước lượng của mình, ghi rõ "ước lượng", sẽ bấm giờ thật; không đồng ý điểm thiếu chủ động; tự quyết pitch chung card 1 và 2 vì cùng là nghẽn quy trình việc |
 | CP4 Research | | | | |
 | CP5 Quy trình | | | | |
 | CP5–6 Problem Statement | | | | |
