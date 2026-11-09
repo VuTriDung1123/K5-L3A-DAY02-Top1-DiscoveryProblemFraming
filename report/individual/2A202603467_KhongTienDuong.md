@@ -59,7 +59,7 @@ Dương scan 8 problem:
 | Success metric (baseline → target) | 3 tiếng → 5 phút đọc hiểu |
 | Phương án không dùng AI | Trao đổi miệng và giấy về codebase + logic code giữa các thành viên |
 | Giả thuyết về AI (nếu có) | |
-| Cảm nhận nhanh | Agent |
+| Cảm nhận nhanh | Agent, thay đổi được  |
 
 Quy trình nháp hiện tại:
 
@@ -86,7 +86,7 @@ HIỆN TẠI — 4 bước
 | Success metric (baseline → target) | 10 phút → 1–2 phút |
 | Phương án không dùng AI | Có 1 file chung để mọi người tự đọc và cập nhật |
 | Giả thuyết về AI (nếu có) | |
-| Cảm nhận nhanh | Rule |
+| Cảm nhận nhanh | Rule, có thể thay đổi, chỉ cần chú ý  |
 
 Quy trình nháp hiện tại:
 
@@ -112,7 +112,7 @@ HIỆN TẠI — 3 bước
 | Success metric (baseline → target) | 3 tiếng → 10 phút |
 | Phương án không dùng AI |Họp và trình bày trước toàn đội|
 | Giả thuyết về AI (nếu có) | |
-| Cảm nhận nhanh | Rule +Agent  |
+| Cảm nhận nhanh | Rule +Agent , có thể thay đổi được  |
 
 Quy trình nháp hiện tại:
 
@@ -136,47 +136,50 @@ HIỆN TẠI — 3 bước
 
 | Điểm yếu AI chỉ ra | Đồng ý? | Đã sửa gì |
 |---|---|---|
-| **[Card #1] Bottleneck chưa có số phút:** "phải trao đổi lại" không ghi mất bao nhiêu phút/lần — rubric trừ điểm nếu quy trình không có số phút từng bước | | |
-| **[Card #1] Metric "5 phút đọc hiểu" chưa rõ cách đo:** đo ai, đo lúc nào, "hiểu đủ" theo tiêu chí nào? Chính bạn ghi ở bảng top 3 "chưa chắc: thế nào là hiểu đủ" — metric cần trả lời được câu đó, ví dụ: "đọc file mô tả xong, tự chạy build và giải thích được 3 module chính" | | |
-| **[Card #1] Cảm nhận nhanh ghi "Agent" nhưng không có giả thuyết AI:** chưa nói Agent sẽ tự làm gì, và chưa giải thích vì sao Rule hoặc Workflow không đủ (CP6 sẽ bắt trả lời "vì sao không chọn mức đơn giản hơn") | | |
-| **[Card #1] Bước 3 bạn đã "tạo file mô tả do AI làm" nhưng người tiếp nhận vẫn phải trao đổi lại (bước 4) → file mô tả thất bại:** thiếu gì trong file, sai định dạng nào? Đây chính là giả định quan trọng cần kiểm chứng ở CP4 | | |
-| **[Card #2] Job Story đang chứa solution trá hình:** "tôi muốn tạo 1 file các lỗi hay gặp và cách fix" — "file" là giải pháp, không phải problem. Gợi ý viết lại theo problem: "Khi debug code do AI sinh ra, tôi muốn biết ngay lỗi này nhóm đã từng gặp và cách fix chưa, để không phải mất 5–10 phút xử lý lại mỗi lỗi lặp lại" | | |
-| **[Card #2] Bước 2 mơ hồ:** "đẩy lên repo nhánh để check mà không có file lỗi" — ai check, ở đâu, xong bước này quy trình để lại dấu vết gì? Nếu sau fix không có gì được ghi lại thì bước 3 lặp lại là tất yếu | | |
-| **[Card #2] Metric "10 phút → 1–2 phút" chưa có cách đo:** baseline 10 phút lấy từ bao nhiêu lần/là trung bình? Đo gì làm bằng chứng (log prompt, thời gian đóng ticket)? | | |
-| **[Card #3] "Rule + Agent" là 2 mức cùng lúc:** bạn phải chọn 1 mức để so sánh công bằng, và trả lời được vì sao Rule không đủ nếu chọn Agent | | |
-| **[Card #3] Impact lặp lại metric:** "mất 2–3 tiếng đọc module" trùng success metric. Impact nên nói hậu quả rộng hơn: deploy/sửa nhầm, mở rộng chậm, rủi ro bug khi đội mới không hiểu module | | |
+| **[Card #1] Bottleneck chưa có số phút** | ✅ Đồng ý | **Đã sửa đúng lúc đó:** điền "mất khoảng 1 tiếng trao đổi" vào Bottleneck; quy trình nháp có giờ từng bước (1–2', 5–10', 5'/1 tiếng) + đánh dấu BOTTLENECK |
+| **[Card #1] Metric "5 phút đọc hiểu" chưa rõ cách đo ("hiểu đủ" là gì)** | Đồng ý một phần | Giữ số metric như bảng chấm top 3; **chưa sửa ngay** — cần định nghĩa "hiểu đủ" khi nhóm viết Problem Statement v0/v1 (CP5–CP6) |
+| **[Card #1] Chọn Agent nhưng không có giả thuyết AI / chưa giải thích vì sao không Rule/Workflow** | Đồng ý một phần | **Chưa sửa trong card** — sẽ giải trình khi nhóm so sánh 4 mức ở CP6 (trả lời "vì sao không chọn mức đơn giản hơn") |
+| **[Card #1] File mô tả (bước 3, do AI làm) nhưng người nhận vẫn không hiểu → file thất bại** | ✅ Đồng ý | Chuyển thành **giả định quan trọng để kiểm chứng ở CP4**: "file mô tả sai/thiếu vì sao?" (khớp cả problem #7: tài liệu không thống nhất định dạng) |
+| **[Card #2] Job Story chứa solution trá hình ("tôi muốn tạo 1 file…")** | Đồng ý một phần | Giữ bản gốc để pitch; nếu nhóm phản biện cùng hướng thì viết lại theo gợi ý: problem = "mất 5–10 phút xử lý lại từng lỗi lặp lại", file là giải pháp |
+| **[Card #2] Bước 2 mơ hồ (ai check, để lại dấu vết gì)** | Đồng ý một phần | Bước 2 đã có giờ (1–2'); phần "sau fix để lại dấu vết gì" chưa có dữ liệu thật — để CP4 kiểm chứng |
+| **[Card #2] Metric "10 → 1–2 phút" chưa có cách đo** | Đồng ý một phần | Quy trình nháp đã ghi rõ nguồn con số (ước lượng 10 phút/lần); cách đo chuẩn (log prompt/thời gian) để CP5 khi viết metric |
+| **[Card #3] "Rule + Agent" là 2 mức cùng lúc** | ✅ Đồng ý | **Chưa chốt trong card** — giữ vấn đề để nhóm chấm/so sánh ở CP3; sẽ chọn 1 mức khi so sánh 4 mức ở CP6 (và trả lời vì sao mức còn lại không đủ) |
+| **[Card #3] Impact lặp lại metric (2–3 tiếng đọc module)** | Đồng ý một phần | **Chưa sửa** — học được rằng impact cần nói hậu quả rộng hơn (deploy/sửa nhầm, mở rộng chậm, rủi ro bug); sẽ bổ sung khi nhóm viết Problem Statement |
+
+**Kết luận cá nhân:** đã sửa ngay 1 điểm (số phút bottleneck Card #1 — điều kiện tối thiểu C2 ✅), 3 điểm chuyển thành giả định kiểm chứng CP4 / phần chốt CP6, còn lại giữ nguyên có lý do.
 
 *(Gợi ý: chọn ít nhất 2 điểm bạn đồng ý để sửa card — rubric C2 yêu cầu sửa ít nhất 1 điểm mới đạt đủ 10 điểm.)*
 
 ---
 
-## 4. Tôi đã tham gia phần nào (CP3 → CP7)
-
+**## 4. Tôi đã tham gia phần nào (CP3 → CP7)**
+---
 | Hoạt động | Tôi đã làm gì? | Kết quả / ảnh hưởng tới bài nhóm |
 |---|---|---|
-| Pitch Problem Card | | |
-| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: | |
-| Nhận phản biện | Câu hỏi tôi nhận được: | Tôi đã sửa gì: |
-| Gom cluster / cây OST | | |
-| Chọn candidate problem | | |
-| Kiểm chứng / research | | |
-| Quy trình nhóm | | |
-| Problem Statement | | |
-| Mức can thiệp AI | | |
-| Quyết định | | |
+| Pitch Problem Card | Trình bày Card #1 về việc mất nhiều thời gian họp và nhắn tin hỏi tiến độ. Tôi đưa ra vấn đề mất khoảng 2 giờ mỗi ngày và đề xuất cách giảm thời gian cập nhật tiến độ | Giúp nhóm có thêm một vấn đề để xem xét, đặc biệt là việc lead phải liên tục hỏi tiến độ từng thành viên |
+| Phản biện bài của bạn khác | Câu hỏi tôi đã đặt: Nếu chỉ sử dụng standup 15 phút và bảng cập nhật công việc cuối ngày thì có thể giảm được một nửa thời gian họp và hỏi tiến độ không? | Giúp nhóm nhìn nhận thêm khả năng giải quyết vấn đề bằng cách đơn giản, chưa cần sử dụng AI |
+| Nhận phản biện | Tôi nhận được góp ý về việc số liệu 2 giờ mỗi ngày mới chỉ là ước lượng, chưa có thời gian đo thực tế. Ngoài ra, có ý kiến cho rằng vấn đề chờ phân việc có thể giải quyết bằng backlog | Tôi ghi nhận những góp ý này và xác định cần đo lại thời gian thực tế, đồng thời xem xét các giải pháp không dùng AI trước |
+| Gom cluster / cây OST | Tôi đóng góp các vấn đề liên quan đến việc cập nhật tiến độ, chờ phân công công việc và hai người cùng code nhưng không nắm được thay đổi của nhau | Giúp nhóm nhìn ra những vấn đề có liên quan đến việc phối hợp và chia sẻ thông tin trong quá trình làm dự án |
+| Chọn candidate problem | Tôi đề xuất Card #1 vì vấn đề xảy ra thường xuyên, ảnh hưởng đến nhiều người và có số liệu ước lượng khoảng 120 phút mỗi ngày | Có thêm cơ sở để nhóm đánh giá và so sánh với các vấn đề khác trước khi chọn vấn đề chính |
+| Kiểm chứng / research | Tôi đề xuất kiểm tra lại thời gian họp, nhắn tin hỏi tiến độ và tìm hiểu xem các nhóm khác đang sử dụng công cụ nào để quản lý công việc | Giúp nhận ra số liệu ban đầu vẫn cần được kiểm chứng, không nên xem những con số ước lượng là kết quả chính thức |
+| Quy trình nhóm | Tôi mô tả quy trình hiện tại khi lead hỏi tiến độ, chờ phản hồi, tổ chức họp và thông báo lại cho những người liên quan | Giúp nhóm xác định được bước mất nhiều thời gian nhất là họp cập nhật tiến độ, khoảng 60 phút mỗi ngày theo ước lượng |
+| Problem Statement | Tôi góp ý cần xác định rõ vấn đề, đối tượng bị ảnh hưởng và metric để đánh giá kết quả. Không nên đưa giải pháp AI vào ngay khi chưa làm rõ problem | Giúp Problem Statement tập trung vào vấn đề thực tế thay vì chỉ mô tả một công cụ muốn xây dựng |
+| Mức can thiệp AI | Tôi đề xuất AI có thể hỗ trợ tổng hợp tiến độ từ commit, Pull Request và tin nhắn. Tuy nhiên, AI chỉ nên đưa ra bản tóm tắt để lead kiểm tra trước khi gửi | Giúp nhóm cân nhắc mức độ sử dụng AI phù hợp, tránh để AI tự quyết định hoặc giao việc khi chưa cần thiết |
+| Quyết định | Tôi cho rằng nên thử standup 15 phút và bảng cập nhật công việc trước. Nếu vẫn mất nhiều thời gian tổng hợp thông tin thì mới xem xét sử dụng AI | Giúp nhóm có thêm góc nhìn về việc ưu tiên giải pháp đơn giản trước, chỉ sử dụng AI khi thực sự cần thiết |
 
 ---
-
 ## 5. Dùng AI
 
+**## 5. Dùng AI**
+---
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
-| CP1 Scan | Không dùng AI — tự scan 8 problem trước, đúng nguyên tắc "tự scan trước rồi mới hỏi AI" | — | — | — |
-| CP2 Problem Card | Đưa 3 card vào AI đóng vai PM hoài nghi để phản biện; nhờ AI vẽ 3 quy trình nháp ASCII (có số phút, đánh dấu bottleneck) từ mô tả của tôi | Phát hiện bottleneck thiếu số phút, metric chưa rõ cách đo, Job Story chứa solution trá hình, Actor chứa 2 mức can thiệp cùng lúc | *(bạn tự điền: AI có điểm nào sai/thiếu so với thực tế của bạn?)* | *(bạn tự điền: chọn các điểm phản biện mà bạn đồng ý rồi sửa card/chọn giữ nguyên)* |
-| CP4 Research | | | | |
-| CP5 Quy trình | | | | |
-| CP5–6 Problem Statement | | | | |
-| CP6 Mức can thiệp / quyết định | | | | |
+| CP1 Scan | Không dùng AI, tự tìm và ghi ra 8 vấn đề trước rồi mới sử dụng AI ở các bước sau | — | — | — |
+| CP2 Problem Card | Đưa 3 card cho AI phản biện như một PM khó tính; nhờ AI vẽ lại quy trình bằng ASCII, có thời gian từng bước và đánh dấu bottleneck | Giúp phát hiện những chỗ còn thiếu như thời gian từng bước, bottleneck, metric chưa rõ cách đo và Job Story còn lẫn giải pháp | AI yêu cầu phải có số liệu đo thực tế trong khi dữ liệu của tôi mới chỉ là ước lượng. Ngoài ra AI có lúc sửa format và chính tả chưa chính xác | Tôi tự kiểm tra lại các góp ý, bổ sung thời gian và bottleneck. Những số liệu chưa được kiểm chứng thì giữ ở dạng ước lượng và sẽ kiểm tra thêm ở các bước sau |
+| CP4 Research | Nhờ AI gợi ý một số công cụ và cách làm tương tự để tham khảo, như FAQ, memory bank và Decision Log | Giúp tìm hướng nghiên cứu nhanh hơn và biết thêm một số cách giải quyết vấn đề | Có lúc AI đưa link nhưng nội dung bên trong không đúng như mô tả | Tôi tự mở và kiểm tra lại từng link, chỉ giữ những tài liệu thực sự liên quan đến vấn đề của nhóm |
+| CP5 Quy trình | Nhờ AI chuyển quy trình của nhóm thành sơ đồ ASCII hoặc Mermaid, có thời gian từng bước và đánh dấu bottleneck | Giúp trình bày quy trình rõ ràng hơn, dễ nhìn ra bước nào mất nhiều thời gian | AI đôi khi gộp hai bước thành một hoặc đặt sai vị trí bottleneck | Tôi đối chiếu lại từng bước với quy trình thực tế của nhóm trước khi đưa vào báo cáo |
+| CP5–6 Problem Statement | Nhờ AI đọc và phản biện Problem Statement để tìm những điểm còn thiếu hoặc chưa hợp lý, không nhờ AI viết lại | Giúp nhận ra metric chưa rõ cách đo và cần xác định rõ giới hạn của AI | AI có xu hướng muốn viết lại toàn bộ Problem Statement thay vì chỉ ra vấn đề | Tôi chỉ lấy những góp ý phù hợp, sau đó cùng nhóm tự chỉnh sửa và đưa ra Problem Statement cuối cùng |
+| CP6 Mức can thiệp / quyết định | Nhờ AI góp ý so sánh các mức độ can thiệp của AI và những rủi ro có thể gặp | Giúp tôi nhìn được ưu nhược điểm của từng mức và có thêm cơ sở để giải thích lựa chọn của nhóm | AI đôi khi đề xuất sử dụng AI nhiều hơn mức thực tế cần thiết | Nhóm tự đánh giá và lựa chọn mức can thiệp dựa trên vấn đề thực tế và kết quả kiểm chứng, không chọn chỉ vì AI đề xuất |
 
 ---
 
@@ -185,18 +188,29 @@ HIỆN TẠI — 3 bước
 Trả lời bằng trải nghiệm thật của bạn, tối thiểu 200 từ cho các câu 6.1–6.6 (không tính 6.7, câu này được chấm riêng ở tiêu chí C5). **Không dùng AI để viết thay.**
 
 **6.1. Tôi học được gì khi nghe top 3 problems của các bạn khác?**
+Tôi học được cách để đảo lộn vấn đề, các mặt trái và cách 1 vấn đề được phân tích, cách làm việc của các bạn khác
 
 **6.2. Nhóm có lúc nào bị "solution-first" (nghĩ giải pháp trước khi hiểu vấn đề) không? Lúc đó nhóm nhận ra và xử lý thế nào?**
+không, đa số dựa vào trải nghiệm thực tế của các bạn
 
 **6.3. Tôi có đổi ý sau khi bị phản biện không? Kể một lần cụ thể.**
+Không
 
 **6.4. Kết quả kiểm chứng (phỏng vấn/survey/research) có làm tôi bất ngờ không? Điều gì?**
+có bất ngờ, vì dự án phần trao đổi qua lại giữa các thành viên team dev về 1 chức năng lâu hơn tôi nghĩ
 
 **6.5. Điều khó nhất khi viết Problem Statement là gì?**
+phải có kinh nghiệm
 
 **6.6. Nếu làm lại, tôi sẽ đổi gì? Tôi sẽ phản biện nhóm mạnh hơn ở điểm nào?**
+Tôi tạm thời chưa đổi gì
+tôi sẽ phản biện phần logic 
 
 **6.7. Hiểu bài:** giải thích bằng 5–8 câu, không nhìn tài liệu, chuỗi *problem → quy trình → metric → boundary → mức can thiệp AI → quyết định* của bài nhóm mình.
+problem: phải xem tất cả các tài liệu từ các ứng dụng khác như zalo, fb, discord, ... dẫn đến rối
+Quy trình : Tạo gg sheet lên để đánh dấu các việc, có thông báo
+Mức can thiệp: chủ yếu trải nghiệm thực tế
+quyết định : giữ phần gg sheet và có thể tích hợp thêm thông báo 
 
 ---
 
