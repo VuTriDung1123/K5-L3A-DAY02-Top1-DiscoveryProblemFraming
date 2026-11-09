@@ -8,7 +8,7 @@
 
 - Họ tên: KhongTienDuong *(bạn sửa lại có dấu nếu muốn, ví dụ Khổng Tiến Dương)*
 - MSSV: 2A202603467
-- Email trường (không bắt buộc, repo có thể để public):
+- Email trường :
 - Tên nhóm: Nhom01Ban02
 - Link repo nhóm: https://github.com/VuTriDung1123/K5-L3A-DAY02-Nhom01Ban02-DiscoveryProblemFraming.git
 
@@ -171,7 +171,7 @@ HIỆN TẠI — 3 bước
 
 | Checkpoint | Tôi dùng AI để làm gì? | AI hữu ích ở đâu? | AI sai hoặc hời hợt ở đâu? | Tôi sửa gì bằng nhận định của mình? |
 |---|---|---|---|---|
-| CP1 Scan | | | | |
+| CP1 Scan | Không dùng AI — tự scan 8 problem trước, đúng nguyên tắc "tự scan trước rồi mới hỏi AI" | — | — | — |
 | CP2 Problem Card | Đưa 3 card vào AI đóng vai PM hoài nghi để phản biện; nhờ AI vẽ 3 quy trình nháp ASCII (có số phút, đánh dấu bottleneck) từ mô tả của tôi | Phát hiện bottleneck thiếu số phút, metric chưa rõ cách đo, Job Story chứa solution trá hình, Actor chứa 2 mức can thiệp cùng lúc | *(bạn tự điền: AI có điểm nào sai/thiếu so với thực tế của bạn?)* | *(bạn tự điền: chọn các điểm phản biện mà bạn đồng ý rồi sửa card/chọn giữ nguyên)* |
 | CP4 Research | | | | |
 | CP5 Quy trình | | | | |

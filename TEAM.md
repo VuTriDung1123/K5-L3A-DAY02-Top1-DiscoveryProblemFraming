@@ -37,7 +37,9 @@ Gợi ý vai trò (một người có thể giữ nhiều vai): điều phối t
 
 Mỗi thành viên thêm một mục theo mẫu dưới đây, tiêu đề là `HoVaTen-MSSV`.
 
-### HoVaTen-MSSV
+### KhongTienDuong-2A202603467
+
+*(Điền sau buổi nhóm — theo CP7, `CHECKPOINTS.md` dòng 141. Bằng chứng ghi kèm link commit/file cụ thể.)*
 
 **Phần việc phụ trách:**
 
